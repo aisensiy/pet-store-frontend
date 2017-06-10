@@ -39,18 +39,6 @@ const StyledDiv = styled.div`
     color: black;
     margin-bottom: 1em;
   }
-  .add-to-cart {
-    background-color: #ff0036;
-    color: white;
-    border-color: #ff0036;
-    border-radius: 0;
-    
-    &:hover, &:focus, &:active {
-      color: white;
-      background-color: #ff0036;
-      border-color: #ff0036;
-    }
-  }
 `;
 
 class Pet extends React.Component {
@@ -68,7 +56,7 @@ class Pet extends React.Component {
             {description}
           </p>
           <p>价格：<Price>{price.replace(/[^\d\.]/g, '')}</Price></p>
-          <Button size="large" className="add-to-cart" onClick={() => addToCard(pet)}>加入购物车</Button>
+          <Button size="large" className="add-to-cart" type={"primary"} onClick={() => addToCard(pet)}>加入购物车</Button>
         </div>
       </StyledDiv>
     );

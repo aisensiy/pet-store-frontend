@@ -1,26 +1,41 @@
 @import '~antd/dist/antd.css';
 
-.App {
-  text-align: center;
+.ant-btn {
+  border-radius: 0;
+  border-width: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+::selection {
+  color: #ff0036;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.ant-checkbox-wrapper:hover .ant-checkbox-inner, .ant-checkbox:hover .ant-checkbox-inner, .ant-checkbox-input:focus + .ant-checkbox-inner {
+  border-color: #ff0036;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  border-color: #ff0036;
+  background-color: #ff0036;
+}
+
+.ant-checkbox {
+  border-color: #ff0036;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner:hover {
+  border-color: #ff0036;
+}
+
+a, a:visited, a:focus, a:active, a:hover {
+  color: #ff0036;
+}
+
+.ant-btn.ant-btn-primary {
   color: white;
+  background: #ff0036;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.ant-btn.ant-btn-primary:hover, .ant-btn.ant-btn-primary:active, .ant-btn.ant-btn-primary:focus {
+  color: white;
+  background-color: #ff0036;
 }
