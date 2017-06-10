@@ -7,6 +7,7 @@ import PetItem from '../src/components/PetItem';
 import PetView from '../src/components/Pet';
 import TopNav from '../src/components/TopNav';
 import ShoppingCart from '../src/components/ShoppingCart';
+import OrderItem from '../src/components/OrderItem';
 
 import '../src/App.css';
 
@@ -130,4 +131,35 @@ storiesOf("Shopping Cart", module)
             quantity: 3
           }
         ]}/>
+    ));
+
+storiesOf("Order Item", module)
+    .addDecorator(story => (
+        <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
+    ))
+    .add('default', () => (
+        <OrderItem order={{
+          "id": "ba649c3c-94a2-4ea1-a151-794f781b36ed",
+          "orderedDate": "2017-06-07T16:46:14.457+08:00",
+          "status": "PAYMENT_EXPECTED",
+          "username": "aisensiy",
+          "paid": false,
+          "delivering": false,
+          "finished": false,
+          "items": [
+            {
+              "petId": 1,
+              "quantity": 1,
+              "price": "CNY 4000.00",
+              "name": "美国短尾猫"
+            },
+            {
+              "petId": 2,
+              "quantity": 1,
+              "price": "CNY 4000.00",
+              "name": "英国短尾猫"
+            }
+          ],
+          "price": "CNY 8000.00"
+        }}/>
     ));

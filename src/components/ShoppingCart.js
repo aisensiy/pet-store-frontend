@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router-dom';
 import { InputNumber, Button, Icon } from 'antd';
 import styled from 'styled-components';
+import Price from './Price';
 
 
 const StyledForEmptyDiv = styled.div`
@@ -67,16 +68,6 @@ const StyledDiv = styled.div`
   
   .items li > .delete {
     width: 10%;
-  }
-`;
-
-const Price = styled(({ children }) => (
-    <span className="price">¥<span>{children}</span></span>
-))`
-  color: black;
-  font-weight: bold;
-  span {
-    font-size: 1.2em;
   }
 `;
 
