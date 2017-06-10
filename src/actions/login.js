@@ -4,7 +4,7 @@ import { SESSION_CREATED, SESSION_DESTROYED } from '../reducers/session';
 import decode from 'jwt-decode';
 import storage from '../utils/storage';
 
-const request = 'LOGIN';
+const request = 'LOGIN_REQUEST';
 const requestReset = request + '_RESET';
 
 

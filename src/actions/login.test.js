@@ -24,8 +24,8 @@ describe('login actions', () => {
         .reply(201, {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoic2N4dSIsImVtYWlsIjoic2N4dUB0aG91Z2h0d29ya3MuY29tIn0.DrDy3KHQhtWB-PjgEWVfkyJSrA9fOzIB0UjdNRcv4wo'});
 
     const expectedActions = [
-      { type: 'LOGIN' },
-      { type: 'LOGIN_SUCCESS' },
+      { type: 'LOGIN_REQUEST' },
+      { type: 'LOGIN_REQUEST_SUCCESS' },
       { type: 'SESSION_CREATED', payload: { username: 'scxu', email } }
     ];
 
@@ -47,8 +47,8 @@ describe('login actions', () => {
         .reply(404, {});
 
     const expectedActions = [
-      { type: 'LOGIN' },
-      { type: 'LOGIN_FAIL', payload: {} }
+      { type: 'LOGIN_REQUEST' },
+      { type: 'LOGIN_REQUEST_FAIL', payload: {} }
     ];
 
     const store = mockStore({});
@@ -60,7 +60,7 @@ describe('login actions', () => {
 
   it('should reset login request result', () => {
     expect(actions.resetLogin()).toEqual({
-      type: 'LOGIN_RESET'
+      type: 'LOGIN_REQUEST_RESET'
     });
   });
 });

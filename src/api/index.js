@@ -54,6 +54,10 @@ export const register = (values) => {
   });
 };
 
+export const createOrder = (username, values) => {
+  return fetcher.post(`/users/${username}/orders`, values);
+};
+
 export const fetchOrders = (username) => {
   return fetcher.get(`/users/${username}/orders`).then(res => res.data._embedded.orders);
 };
