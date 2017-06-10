@@ -48,6 +48,12 @@ export const login = (username, password) => {
   });
 };
 
+export const register = (values) => {
+  return fetcher.post(`/users`, values).then(res => {
+    return Promise.resolve({});
+  });
+};
+
 export const fetchOrders = (username) => {
   return fetcher.get(`/users/${username}/orders`).then(res => res.data._embedded.orders);
 };
