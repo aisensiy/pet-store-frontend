@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Button } from 'antd';
 import styled from 'styled-components';
 const FormItem = Form.Item;
 
