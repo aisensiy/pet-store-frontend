@@ -5,6 +5,7 @@ import RegistrationForm from '../src/components/RegistrationForm';
 import LoginForm from '../src/components/LoginForm';
 import PetItem from '../src/components/PetItem';
 import PetView from '../src/components/Pet';
+import TopNav from '../src/components/TopNav';
 
 import '../node_modules/antd/dist/antd.css';
 
@@ -67,4 +68,15 @@ storiesOf("PetView", module)
           "price": "CNY 4000.00",
           "quantity": 30
         }} />
+    ));
+
+storiesOf("Top Navi Bar", module)
+    .addDecorator(story => (
+        <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
+    ))
+    .add('with login user', () => (
+        <TopNav user={{username: 'aisensiy'}} logout={action('logout')}/>
+    ))
+    .add('without login', () => (
+        <TopNav logout={action('logout')} />
     ));
