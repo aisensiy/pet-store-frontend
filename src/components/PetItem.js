@@ -53,7 +53,7 @@ class PetItem extends React.Component {
             </div>
             <div className="custom-card">
               <h4>{name}</h4>
-              <Price>3500</Price>
+              <Price>{price.replace(/[^\d.]+/g, '')}</Price>
             </div>
           </Link>
         </StyledCard>
