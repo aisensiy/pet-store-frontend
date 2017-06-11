@@ -1,10 +1,9 @@
 import React, { PropTypes } from 'react';
-import { Form, Icon, Input, Button } from 'antd';
+import { Form, Icon, Input, Button, message } from 'antd';
 import styled from 'styled-components';
 const FormItem = Form.Item;
 
 const StyledForm = styled(Form)`
-  max-width: 300px;
   
   .login-form-button {
     width: 100%;
@@ -16,7 +15,9 @@ class LoginForm extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        this.props.onSubmit(values);
+        this.props.onSubmit(values).catch(() => {
+          message.error("用户名或密码错误");
+        });
       }
     });
   };
@@ -54,6 +55,6 @@ LoginForm.propTypes = {
   onSubmit: PropTypes.func.isRequired
 };
 
-const WrappedNormalLoginForm = Form.create()(LoginForm);
+LoginForm = Form.create()(LoginForm);
 
-export default WrappedNormalLoginForm;
+export default LoginForm;

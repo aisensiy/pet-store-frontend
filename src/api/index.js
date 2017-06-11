@@ -23,7 +23,7 @@ const fetcher = axios.create({
 
 fetcher.interceptors.request.use(function (config) {
   const token = storage.getItem("token") || null;
-  config.headers['Authorization'] = `Bearer ${token}`;
+  config.headers['Authorization'] = `${token}`;
   return config;
 }, function (error) {
   // Do something with request error

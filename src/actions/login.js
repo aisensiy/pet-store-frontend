@@ -14,7 +14,7 @@ export const login = (username, password) => {
     dispatch({
       type: SESSION_CREATED,
       payload: {
-        username: payload.username,
+        username: payload.sub,
         email: payload.email
       }
     });
@@ -43,7 +43,7 @@ export const loadCurrent = () => {
   return {
     type: SESSION_CREATED,
     payload: {
-      username: payload.username,
+      username: payload.sub,
       email: payload.email
     }
   };

@@ -18,8 +18,8 @@ const Price = ({children}) => {
 };
 
 const StyledDiv = styled.div`
-  overflow: auto;
   position: relative;
+  height: 100%;
   .image {
     width: 300px;
     left: 0; 
