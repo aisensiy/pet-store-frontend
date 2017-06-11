@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Icon, Button } from 'antd';
+import { Icon, Button, Col, Row } from 'antd';
 import styled from 'styled-components';
 
 const StyleForPrice = styled.div`
@@ -17,20 +17,15 @@ const Price = ({children}) => {
   return <StyleForPrice>¥<span>{children}</span></StyleForPrice>
 };
 
-const StyledDiv = styled.div`
+const StyledDiv = styled(Row)`
   position: relative;
   height: 100%;
   .image {
-    width: 300px;
-    left: 0; 
-    top: 0;
-    position: absolute;
   }
   .image img {
     width: 100%;
   }
   .content {
-    margin-left: 320px;
     min-height: 30em;
     overflow: auto;
   }
@@ -46,18 +41,18 @@ class Pet extends React.Component {
     let { pet, pet: { name, description, price }, addToCard } = this.props;
 
     return (
-      <StyledDiv>
-        <div className="image">
+      <StyledDiv gutter={16}>
+        <Col className="image" span={6}>
           <img src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" alt=""/>
-        </div>
-        <div className="content">
+        </Col>
+        <Col className="content" span={18}>
           <h2>{name}</h2>
           <p>
             {description}
           </p>
           <p>价格：<Price>{price.replace(/[^\d\.]/g, '')}</Price></p>
           <Button size="large" className="add-to-cart" type={"primary"} onClick={() => addToCard(pet)}>加入购物车</Button>
-        </div>
+        </Col>
       </StyledDiv>
     );
   }

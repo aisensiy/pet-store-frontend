@@ -6,6 +6,7 @@ import TopNav from './containers/TopNav';
 import LoginPage from './pages/LoginPage';
 import PetsPage from './pages/PetsPage';
 import RegistrationPage from './pages/RegistrationPage';
+import PetPage from './pages/PetPage';
 import storage from './utils/storage';
 import { loadCurrent } from './actions/login';
 
@@ -32,7 +33,8 @@ class App extends Component {
               <Content style={{ padding: '0 50px' }}>
                 <Route path="/login" component={LoginPage}/>
                 <Route path="/register" component={RegistrationPage}/>
-                <Route path="/pets" component={PetsPage}/>
+                <Route exact path="/pets" component={PetsPage}/>
+                <PrivateRoute exact path="/pets/:pet_id" component={PetPage}/>
               </Content>
 
               <Footer style={{ textAlign: 'center' }}>

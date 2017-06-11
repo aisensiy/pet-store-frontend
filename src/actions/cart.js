@@ -10,7 +10,7 @@ export const addItem = (pet) => {
   }
 };
 
-export const updateQuantity = (value) => {
+export const updateQuantity = ({pet, quantity}) => {
   return {
     type: actionTypes.UPDATE_QUANTITY,
     payload: {
