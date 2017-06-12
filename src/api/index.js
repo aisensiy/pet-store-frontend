@@ -59,7 +59,7 @@ export const createOrder = (username, values) => {
 };
 
 export const fetchOrders = (username) => {
-  return fetcher.get(`/users/${username}/orders`).then(res => res.data._embedded.orders);
+  return fetcher.get(`/users/${username}/orders?sort=orderedDate,desc`).then(res => res.data._embedded.orders);
 };
 
 export const fetchPets = () => {
