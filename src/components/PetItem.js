@@ -49,7 +49,7 @@ class PetItem extends React.Component {
         <StyledCard style={{ width: 240 }} bodyStyle={{ padding: 0 }}>
           <Link to={`/pets/${id}`}>
             <div className="custom-image">
-              <img alt="example" width="100%" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
+              <img alt="example" width="100%" src="https://gd4.alicdn.com/imgextra/i4/2867678467/TB2FyJqg80kpuFjSsziXXa.oVXa_!!2867678467.jpg_400x400.jpg" />
             </div>
             <div className="custom-card">
               <h4>{name}</h4>

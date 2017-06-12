@@ -2,8 +2,15 @@ import * as api from '../api/index';
 import * as actionTypes from '../reducers/orders';
 import { commandActionCreator } from './actionCreators';
 
-export const createOrder = (username, orders) => {
-  return commandActionCreator(api.createOrder(username, orders), 'CREATE_ORDER_REQUEST', (dispatch, res) => {
+export const createOrder = (username, items) => {
+  console.log(username);
+  return commandActionCreator(api.createOrder(username, items), 'CREATE_ORDER_REQUEST', (dispatch, res) => {
+    dispatch({
+      type: "CREATE_ORDER",
+      payload: {
+        username, items
+      }
+    });
     return Promise.resolve({});
   });
 };

@@ -55,7 +55,7 @@ export const register = (values) => {
 };
 
 export const createOrder = (username, values) => {
-  return fetcher.post(`/users/${username}/orders`, values);
+  return fetcher.post(`/users/${username}/orders`, { items: values });
 };
 
 export const fetchOrders = (username) => {

@@ -77,10 +77,10 @@ storiesOf("Top Navi Bar", module)
         <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
     ))
     .add('with login user', () => (
-        <TopNav user={{username: 'aisensiy'}} logout={action('logout')}/>
+        <TopNav user={{username: 'aisensiy'}} itemCount={10} logout={action('logout')}/>
     ))
     .add('without login', () => (
-        <TopNav logout={action('logout')} />
+        <TopNav logout={action('logout')} itemCount={0} />
     ));
 
 storiesOf("Shopping Cart", module)

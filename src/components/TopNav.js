@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Menu, Icon } from 'antd';
+import { Menu, Icon, Badge } from 'antd';
 import { Link } from 'react-router-dom';
 const SubMenu = Menu.SubMenu;
 
@@ -14,7 +14,7 @@ class TopNav extends Component {
   }
 
   render() {
-    let { user } = this.props;
+    let { user, itemCount } = this.props;
 
     return (
         <div style={{backgroundColor: '#404040'}}>
@@ -59,7 +59,8 @@ class TopNav extends Component {
               }}
           >
 
-            <Menu.Item key="shopping-cart"><Link to="/cart"><Icon type="shopping-cart" />购物车</Link></Menu.Item>
+            <Menu.Item key="shopping-cart"><Link to="/cart"><Icon type="shopping-cart" />购物车 <Badge count={itemCount}/></Link></Menu.Item>
+            <Menu.Item key="orders"><Link to="/orders">我的订单</Link></Menu.Item>
             <SubMenu title={<span><Icon type="user" />{user.username}</span>}>
               <Menu.Item key="setting:2"><a href="#" onClick={this.logout.bind(this)}>Logout</a></Menu.Item>
             </SubMenu>
@@ -75,6 +76,7 @@ TopNav.propTypes = {
   user: PropTypes.shape({
     username: PropTypes.string.isRequired
   }),
+  itemCount: PropTypes.number.isRequired,
   logout: PropTypes.func.isRequired
 };
 

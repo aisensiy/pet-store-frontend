@@ -1,14 +1,14 @@
 import React from 'react';
-import Pet from '../containers/Pet';
+import Cart from '../containers/Cart';
 
-class PetPage extends React.Component {
+class CartPage extends React.Component {
   render() {
     return (
       <div style={{backgroundColor: 'white', marginTop: '30px'}}>
-        <Pet />
+        <Cart />
       </div>
     );
   }
 }
 
-export default PetPage;
+export default CartPage;

@@ -6,7 +6,6 @@ import Price from './Price';
 
 
 const StyledForEmptyDiv = styled.div`
-  height: 3em;
   padding: 5em 0;
   text-align: center;
   a {
@@ -21,7 +20,7 @@ const StyledForEmptyDiv = styled.div`
 const EmptyShoppingCard = (props) => (
     <StyledForEmptyDiv>
       <p>购物车里没有任何商品</p>
-      <a className="ant-btn ant-btn-primary">继续购物</a>
+      <Link className="ant-btn ant-btn-primary" to="/pets">继续购物</Link>
     </StyledForEmptyDiv>
 );
 
@@ -121,9 +120,11 @@ class NonEmptyShoppingCard extends React.Component {
                     <Link className="pet" to={`/pets/${id}`}>{name}</Link>
                     <Price>{price.replace(/[^\d\.]+/g, '')}</Price>
                     <span className="quantity">
-                      <InputNumber size="small" min={1} max={10} defaultValue={quantity} onChange={(value) => updateQuantity(pet, value)} />
+                      <InputNumber size="small" min={1} max={10} defaultValue={quantity} onChange={(value) => {
+                        updateQuantity(pet, value);
+                      }} />
                     </span>
-                    <a className="delete" onClick={() => removeItem(pet)}>
+                    <a className="delete" onClick={() => removeItem(item)}>
                       <Icon type="delete" />
                     </a>
                   </li>

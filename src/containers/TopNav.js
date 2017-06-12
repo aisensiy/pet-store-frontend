@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import TopNavView from '../components/TopNav';
 import { logout } from '../actions/login';
 import { withRouter } from 'react-router-dom';
+import { getCount } from '../reducers/cart';
 
 class TopNav extends React.Component {
   logout() {
@@ -18,7 +19,8 @@ class TopNav extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.session
+  user: state.session,
+  itemCount: getCount(state.cart)
 });
 
 export default withRouter(connect(mapStateToProps, {
