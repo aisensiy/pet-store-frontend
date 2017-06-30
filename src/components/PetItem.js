@@ -1,11 +1,12 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Card } from 'antd';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
   color: #ff0036;
-  
+
   span {
     font-size: 1.2em;
     font-weight: bold;
@@ -22,12 +23,12 @@ const StyledCard = styled(Card)`
   .custom-image img {
     display: block;
   }
-  
+
   .custom-card {
     padding: 10px 16px;
     overflow: auto;
   }
-  
+
   .custom-card h4 {
     display: block;
     float: left;
@@ -36,7 +37,7 @@ const StyledCard = styled(Card)`
       color: black;
     }
   }
-  
+
   .custom-card div {
     float: right;
   }

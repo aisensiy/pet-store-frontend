@@ -10,6 +10,7 @@
     "global": "^4.3.2",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.4",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",

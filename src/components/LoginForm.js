@@ -1,10 +1,11 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Form, Icon, Input, Button, message } from 'antd';
 import styled from 'styled-components';
 const FormItem = Form.Item;
 
 const StyledForm = styled(Form)`
-  
+
   .login-form-button {
     width: 100%;
   }

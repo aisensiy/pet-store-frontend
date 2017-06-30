@@ -40,7 +40,7 @@ export const commandActionCreator = (fetch, actionType, successCallback, failCal
   }).catch(err => {
     dispatch({
       type: fail,
-      payload: err.response.data
+      payload: err.response && err.response.data
     });
     if (failCallback) {
       return failCallback(dispatch, err);

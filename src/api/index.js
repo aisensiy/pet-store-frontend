@@ -9,7 +9,7 @@ let baseUrl;
 if (process.env.NODE_ENV === 'test') {
   baseUrl = 'http://example.com';
 } else if (process.env.NODE_ENV === 'development') {
-  baseUrl = 'http://localhost:8080';
+  baseUrl = process.env.REACT_APP_API_PREFIX || 'http://localhost:8080';
 } else {
   baseUrl = process.env.REACT_APP_API_PREFIX;
 }
@@ -33,6 +33,7 @@ fetcher.interceptors.request.use(function (config) {
 fetcher.interceptors.response.use(function (response) {
   return response;
 }, function (error) {
+  console.log(arguments);
   if (error && error.response && error.response.status === 401) {
     storage.removeItem("token");
   }
@@ -59,7 +60,7 @@ export const createOrder = (username, values) => {
 };
 
 export const fetchOrders = (username) => {
-  return fetcher.get(`/users/${username}/orders?sort=orderedDate,desc`).then(res => res.data._embedded.orders);
+  return fetcher.get(`/users/${username}/orders?sort=orderedDate,desc`).then(res => res.data._embedded && res.data._embedded.orders || []);
 };
 
 export const fetchPets = () => {

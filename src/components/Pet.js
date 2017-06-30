@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Icon, Button, Col, Row } from 'antd';
 import styled from 'styled-components';
 
@@ -6,7 +7,7 @@ const StyleForPrice = styled.div`
   margin: 0.5em 0;
   color: #ff0036;
   font-size: 1.5em;
-  
+
   span {
     font-size: 1.2em;
     font-weight: bold;

@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { InputNumber, Button, Icon } from 'antd';
 import styled from 'styled-components';
@@ -27,44 +28,44 @@ const EmptyShoppingCard = (props) => (
 const StyledDiv = styled.div`
   a {
     color: black;
-    
+
     &:hover {
       color: black;
     }
   }
-  
-  
+
+
   .items {
     list-style: none;
     margin: 10px 0;
     border: 1px solid silver;
   }
-  
+
   .items li {
     border-bottom: 1px solid silver;
     padding: 15px;
-    
+
     &:last-child {
       border-bottom: none;
     }
   }
-  
+
   .items li > * {
     display: inline-block;
   }
-  
+
   .items li > .pet {
     width: 50%;
   }
-  
+
   .items li > .price {
     width: 20%;
   }
-  
+
   .items li > .quantity {
     width: 20%;
   }
-  
+
   .items li > .delete {
     width: 10%;
   }
@@ -78,12 +79,12 @@ const Number = styled.span`
 const Summary = styled.div`
   margin-top: 2em;
   text-align: right;
-  
+
   .price {
     color: #ff0036;
     font-size: 1.2em;
   }
-  
+
   &> * {
     display: inline-block;
     margin-left: 1em;
