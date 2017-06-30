@@ -20,6 +20,10 @@ const Price = (props) => {
 };
 
 const StyledCard = styled(Card)`
+  .custom-image {
+    height: 240px;
+  }
+
   .custom-image img {
     display: block;
   }
@@ -44,13 +48,21 @@ const StyledCard = styled(Card)`
 `;
 
 class PetItem extends React.Component {
+  imgUrl(url) {
+    if (/^http/.exec(url)) {
+      return url;
+    } else {
+      return (process.env.REACT_APP_API_PREFIX || "http://localhost:8080") + url
+    }
+  }
+
   render() {
-    const { pet: { id, name, price }} = this.props;
+    const { pet: { id, name, price, pictureUrl }} = this.props;
     return (
         <StyledCard style={{ width: 240 }} bodyStyle={{ padding: 0 }}>
           <Link to={`/pets/${id}`}>
             <div className="custom-image">
-              <img alt="example" width="100%" src="https://gd4.alicdn.com/imgextra/i4/2867678467/TB2FyJqg80kpuFjSsziXXa.oVXa_!!2867678467.jpg_400x400.jpg" />
+              <img alt="example" width="100%" src={this.imgUrl(pictureUrl)}/>
             </div>
             <div className="custom-card">
               <h4>{name}</h4>
@@ -66,7 +78,8 @@ PetItem.propTypes = {
   pet: PropTypes.shape({
     id: PropTypes.any.isRequired,
     name: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired
+    price: PropTypes.string.isRequired,
+    pictureUrl: PropTypes.string.isRequired
   })
 };
 PetItem.defaultProps = {};

@@ -26,6 +26,7 @@ const EmptyShoppingCard = (props) => (
 );
 
 const StyledDiv = styled.div`
+  padding: 1em 2em;
   a {
     color: black;
 

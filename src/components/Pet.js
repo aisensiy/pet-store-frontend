@@ -38,13 +38,21 @@ const StyledDiv = styled(Row)`
 `;
 
 class Pet extends React.Component {
+  imgUrl(url) {
+    if (/^http/.exec(url)) {
+      return url;
+    } else {
+      return (process.env.REACT_APP_API_PREFIX || "http://localhost:8080") + url
+    }
+  }
+
   render() {
-    let { pet, pet: { name, description, price }, addToCard } = this.props;
+    let { pet, pet: { name, description, price, pictureUrl }, addToCard } = this.props;
 
     return (
       <StyledDiv gutter={16}>
         <Col className="image" span={6}>
-          <img src="https://gd4.alicdn.com/imgextra/i4/2867678467/TB2FyJqg80kpuFjSsziXXa.oVXa_!!2867678467.jpg_400x400.jpg" alt=""/>
+          <img src={this.imgUrl(pictureUrl)} alt=""/>
         </Col>
         <Col className="content" span={18}>
           <h2>{name}</h2>
@@ -64,6 +72,7 @@ Pet.propTypes = {
     id: PropTypes.any.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
+    pictureUrl: PropTypes.string.isRequired,
     price: PropTypes.string.isRequired
   })
 };

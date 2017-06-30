@@ -15,7 +15,7 @@ class Pets extends React.Component {
         <div>
           <Row gutter={16}>
             {pets.map(pet => {
-              return <Col span={6} style={{margin: "2em 0"}} key={pet.id}><PetItem pet={pet} /></Col>
+              return <Col lg={6} md={8} sm={12} xs={24} style={{margin: "2em 0"}} key={pet.id}><PetItem pet={pet} /></Col>
             })}
           </Row>
         </div>
