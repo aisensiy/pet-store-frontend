@@ -20,6 +20,7 @@ class TopNav extends Component {
     return (
         <div style={{backgroundColor: '#404040'}}>
           <Menu
+              selectable={false}
               mode="horizontal"
               theme="dark"
               style={{
@@ -34,6 +35,7 @@ class TopNav extends Component {
           </Menu>
           {this.isEmpty(user) &&
           <Menu
+              selectable={false}
               mode="horizontal"
               theme="dark"
               style={{
@@ -54,6 +56,7 @@ class TopNav extends Component {
           <Menu
               mode="horizontal"
               theme="dark"
+              selectable={false}
               style={{
                 lineHeight: '64px',
                 float: 'right'
