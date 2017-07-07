@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon, Button, Col, Row } from 'antd';
 import styled from 'styled-components';
+import imageUrl from '../utils/image_url';
 
 const StyleForPrice = styled.div`
   margin: 0.5em 0;
@@ -38,21 +39,13 @@ const StyledDiv = styled(Row)`
 `;
 
 class Pet extends React.Component {
-  imgUrl(url) {
-    if (/^http/.exec(url)) {
-      return url;
-    } else {
-      return (process.env.REACT_APP_API_PREFIX || "http://localhost:8080") + url
-    }
-  }
-
   render() {
     let { pet, pet: { name, description, price, pictureUrl }, addToCard } = this.props;
 
     return (
       <StyledDiv gutter={16}>
         <Col className="image" span={6}>
-          <img src={this.imgUrl(pictureUrl)} alt=""/>
+          <img src={imageUrl(pictureUrl)} alt=""/>
         </Col>
         <Col className="content" span={18}>
           <h2>{name}</h2>

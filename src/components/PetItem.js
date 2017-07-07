@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Card } from 'antd';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import imageUrl from '../utils/image_url';
 
 const StyledDiv = styled.div`
   color: #ff0036;
@@ -48,21 +49,13 @@ const StyledCard = styled(Card)`
 `;
 
 class PetItem extends React.Component {
-  imgUrl(url) {
-    if (/^http/.exec(url)) {
-      return url;
-    } else {
-      return (process.env.REACT_APP_API_PREFIX || "http://localhost:8080") + url
-    }
-  }
-
   render() {
     const { pet: { id, name, price, pictureUrl }} = this.props;
     return (
         <StyledCard style={{ width: 240 }} bodyStyle={{ padding: 0 }}>
           <Link to={`/pets/${id}`}>
             <div className="custom-image">
-              <img alt="example" width="100%" src={this.imgUrl(pictureUrl)}/>
+              <img alt="example" width="100%" src={imageUrl(pictureUrl)}/>
             </div>
             <div className="custom-card">
               <h4>{name}</h4>

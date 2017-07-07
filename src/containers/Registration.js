@@ -8,12 +8,12 @@ import { withRouter } from 'react-router-dom';
 class Registration extends React.Component {
   register(values) {
     return this.props.register(values).then(() => {
-      this.props.push('/login');
+      this.props.history.push('/login');
     });
   };
 
   render() {
-    return <RegistrationForm onSubmit={this.props.bind(this)}/>
+    return <RegistrationForm onSubmit={this.register.bind(this)}/>
   }
 }
 

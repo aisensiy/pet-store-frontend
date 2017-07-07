@@ -5,13 +5,14 @@ import storage from '../utils/storage';
 axios.defaults.adapter = httpAdapter;
 
 let baseUrl;
+let env = window.__env || {};
 
 if (process.env.NODE_ENV === 'test') {
   baseUrl = 'http://example.com';
 } else if (process.env.NODE_ENV === 'development') {
-  baseUrl = process.env.REACT_APP_API_PREFIX || 'http://localhost:8080';
+  baseUrl = env.REACT_APP_API_PREFIX || 'http://localhost:8080';
 } else {
-  baseUrl = process.env.REACT_APP_API_PREFIX;
+  baseUrl = env.REACT_APP_API_PREFIX;
 }
 
 const fetcher = axios.create({
