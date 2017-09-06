@@ -89,4 +89,4 @@ petstore-app-web.cnup.io/
 
 ### 8. 在浏览器打开应用
 
-访问 apps info 中所提供的地址（这里是 http://petstore-app-web.cnup.io）即可。
+访问 apps info 中所提供的[地址](http://petstore-app-web.cnup.io）即可。
