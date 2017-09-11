@@ -15,7 +15,7 @@ $ cde login http://controller.cnup.io
 $ cde keys:add ~/.ssh/id_rsa.pub
 ```
 
-其中不同的操作系统下添加 key 的目录可能不同，请根据自己的实际情况添加
+其中不同的操作系统下添加 key 的目录可能不同，在 windows 环境下采用 `git bash` 的 key 添加步骤请参考 [http://www.jianshu.com/p/9317a927e844](http://www.jianshu.com/p/9317a927e844)
 
 ### 3. 获取项目
 
@@ -74,7 +74,7 @@ $ cde apps:info
 +------------+------------------+
 --- Access routes:
 
-petstore-app-web.cnup.io/ 
+petstore-app-web.cnup.io/
 
 --- Dependent services:
 -----> Service 1:
